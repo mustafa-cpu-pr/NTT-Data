@@ -1,0 +1,21 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+  }
+  /* dynamic-table.component.css */
+
+/* dynamic-table.component.css */
+h2 {
+  text-align: center; /* Center the heading text */
+  border-bottom: 2px solid black; /* Add a line below the heading */
+  padding-bottom: 10px; /* Space between the heading text and the line */
+  margin-bottom: 20px; /* Space between the line and the content below */
+}
+
+

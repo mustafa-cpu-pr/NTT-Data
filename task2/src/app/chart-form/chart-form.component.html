@@ -1,0 +1,26 @@
+<form [formGroup]="chartForm" (ngSubmit)="saveConfig()" style="max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); font-family: Arial, sans-serif;">
+    <div style="margin-bottom: 15px;">
+      <label for="series" style="display: block; font-weight: bold; margin-bottom: 5px;">Series:</label>
+      <textarea id="series" formControlName="series" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; resize: vertical;"></textarea>
+    </div>
+  
+    <div style="margin-bottom: 15px;">
+      <label for="colors" style="display: block; font-weight: bold; margin-bottom: 5px;">Colors:</label>
+      <textarea id="colors" formControlName="colors" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; resize: vertical;"></textarea>
+    </div>
+  
+    <div style="margin-bottom: 15px;">
+      <label for="tooltip" style="display: block; font-weight: bold; margin-bottom: 5px;">Tooltip:</label>
+      <textarea id="tooltip" formControlName="tooltip" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; resize: vertical;"></textarea>
+    </div>
+  
+    <div style="margin-bottom: 15px;">
+      <label for="dataLabels" style="display: block; font-weight: bold; margin-bottom: 5px;">Data Labels:</label>
+      <textarea id="dataLabels" formControlName="dataLabels" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; resize: vertical;"></textarea>
+    </div>
+  
+    <button type="submit" style="width: 100%; padding: 12px; background-color: #007bff; color: white; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">
+      Save Config
+    </button>
+  </form>
+  

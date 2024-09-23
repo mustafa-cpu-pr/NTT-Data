@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-top: 40px; /* Space above the title */
+        }
+
+        form, .file-upload, .json-button, .table-container {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="number"], input[type="text"], input[type="file"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px; /* Space between buttons */
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .mat-elevation-z8 {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Dynamic Table</h2>
+
+  <!-- Form to generate the table -->
+  <form (ngSubmit)="generateTable()">
+    <div>
+      <label for="rows">Number of Rows:</label>
+      <input type="number" id="rows" [(ngModel)]="rows" name="rows" min="1" required />
+    </div>
+
+    <div>
+      <label for="columns">Number of Columns:</label>
+      <input type="number" id="columns" [(ngModel)]="columns" name="columns" min="1" required />
+    </div>
+
+    <div>
+      <label for="groupBy">Group By Column:</label>
+      <input type="text" id="groupBy" [(ngModel)]="groupBy" name="groupBy" placeholder="Enter column name to group by" />
+    </div>
+
+    <div>
+      <label for="columnSpan">Column Span:</label>
+      <input type="number" id="columnSpan" [(ngModel)]="columnSpan" name="columnSpan" min="1" />
+    </div>
+
+    <div>
+      <label for="rowSpan">Row Span:</label>
+      <input type="number" id="rowSpan" [(ngModel)]="rowSpan" name="rowSpan" min="1" />
+    </div>
+
+    <!-- Button to generate a sample table -->
+    <div class="json-button">
+      <button type="submit">Generate Table</button>
+    </div>
+  </form>
+
+  <!-- File upload input for parsing Excel files -->
+  <div class="file-upload">
+    <input type="file" (change)="onFileChange($event)" accept=".xlsx, .xls" />
+  </div>
+
+  <!-- Button to fetch JSON data from server -->
+  <div>
+    <button (click)="generateJsonData()">Fetch JSON Data</button>
+  </div>
+
+  <!-- Textarea for inputting JSON data -->
+  <div>
+    <label for="jsonDataInput">Input JSON Data:</label>
+    <textarea id="jsonDataInput" [(ngModel)]="jsonDataInput" placeholder='Enter JSON data as a string'></textarea>
+    <button (click)="sendJsonData()">Submit JSON Data</button>
+  </div>
+
+  <!-- Table to display data -->
+  <div class="table-container" *ngIf="tableData && tableData.data.length > 0">
+    <table mat-table [dataSource]="tableData" class="mat-elevation-z8">
+      <ng-container *ngFor="let column of tableColumns" [matColumnDef]="column.dataKey">
+        <th mat-header-cell *matHeaderCellDef>{{ column.column }}</th>
+        <td mat-cell *matCellDef="let element">{{ element[column.dataKey] }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>

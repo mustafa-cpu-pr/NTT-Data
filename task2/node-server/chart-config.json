@@ -1,0 +1,27 @@
+{
+  "series": [
+    {
+      "name": "Series 1",
+      "data": [
+        {
+          "name": "Point A",
+          "value": 15
+        },
+        {
+          "name": "Point B",
+          "value": 25
+        }
+      ]
+    }
+  ],
+  "colors": [
+    "#FF5733",
+    "#33FF57"
+  ],
+  "tooltip": {
+    "enabled": true
+  },
+  "dataLabels": {
+    "enabled": true
+  }
+}
