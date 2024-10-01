@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http'; // Import HttpClientMod
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [DynamicTableComponent, HttpClientModule], // Include HttpClientModule here
+  imports: [DynamicTableComponent, HttpClientModule], 
   template: '<app-dynamic-table></app-dynamic-table>',
   styleUrls: ['./app.component.css']
 })
