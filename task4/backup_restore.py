@@ -14,13 +14,13 @@ os.makedirs(BACKUP_DIR, exist_ok=True)
 os.makedirs(ARCHIVE_DIR, exist_ok=True)
 os.makedirs(RESTORE_DIR, exist_ok=True)
 
-# Function to create backup
+
 def backup_db():
     timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
     backup_path = os.path.join(BACKUP_DIR, f"backup_{timestamp}")
     try:
         print(f"Starting backup for database: {DB_NAME}...")
-        # Running mongodump command
+        
         subprocess.run(["mongodump", "--db", DB_NAME, "--out", backup_path], check=True)
         print(f"Backup successful! Backup saved at {backup_path}")
 
@@ -50,7 +50,7 @@ if __name__ == "__main__":
     if choice == "1":
         backup_db()
     elif choice == "2":
-        # List the existing backup folders for the user
+        
         existing_backups = os.listdir(BACKUP_DIR)
         print("Available backup folders:")
         for folder in existing_backups:
