@@ -1,0 +1,44 @@
+<div style="text-align:center; margin: 20px auto; padding: 20px; border-radius: 10px; background-color: #f0f4f8; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); max-width: 500px;">
+  <h1 style="font-family: 'Arial', sans-serif; color: #333; margin-bottom: 20px;">Voice Recognition Module in Angular</h1>
+  
+  
+
+  <div style="display: flex; justify-content: center; gap: 15px; margin-bottom: 20px;">
+    <button 
+      style="padding: 12px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; background-color: #007bff; color: white; transition: background-color 0.3s, transform 0.2s;"
+      (click)="startListening()"
+      onmouseover="this.style.backgroundColor='#0056b3'; this.style.transform='scale(1.05)';"
+      onmouseout="this.style.backgroundColor='#007bff'; this.style.transform='scale(1)';"
+    >
+      Start Listening
+    </button>
+    <button 
+      style="padding: 12px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; background-color: #dc3545; color: white; transition: background-color 0.3s, transform 0.2s;"
+      (click)="stopListening()"
+      onmouseover="this.style.backgroundColor='#c82333'; this.style.transform='scale(1.05)';"
+      onmouseout="this.style.backgroundColor='#dc3545'; this.style.transform='scale(1)';"
+    >
+      Stop Listening
+    </button>
+  </div>
+
+  <!-- Loading indicator -->
+  <div *ngIf="isListening" style="font-family: 'Arial', sans-serif; color: #333; margin: 10px 0; font-size: 16px;">
+    <p style="color: #007bff;">Listening...</p>
+    <div style="width: 30px; height: 30px; border: 3px solid #007bff; border-top: 3px solid transparent; border-radius: 50%; animation: spin 1s linear infinite; display: inline-block;"></div>
+  </div>
+
+  <p style="margin-top: 20px; background-color: #ffffff; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; color: #333; max-width: 100%; word-wrap: break-word;">
+    <strong>Transcript:</strong> {{ transcript }}
+  </p>
+  <p style="font-family: 'Arial', sans-serif; color: #555; margin-bottom: 20px; font-size: 16px;">
+    This module utilizes Angular and the Web Speech API to provide real-time voice recognition functionality, enhancing user interaction through voice commands. 
+  </p>
+</div>
+
+<style>
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
