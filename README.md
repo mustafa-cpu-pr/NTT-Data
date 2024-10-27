@@ -1,7 +1,7 @@
 # Internship Experience at NTT Data
 
 ## Overview
-During my internship at NTT Data, I contributed to various development and automation projects involving data visualization, real-time UI integration, and system automation. Leveraging technologies like Go, Angular, Express, Node.js, Highcharts, and MongoDB, I developed tools to improve data handling and user interactivity. Each project emphasized a user-focused approach with secure, efficient backend solutions and real-time data processing, resulting in an enhanced user experience.
+During my internship at NTT Data, I contributed to various development and automation projects involving data visualization, real-time UI integration, and system automation. Leveraging technologies like Go, Angular, Express, Node.js, Highcharts, and MongoDB, I developed tools to improve data handling and user interactivity. Each project emphasized a user-focused approach with secure, efficient backend solutions and real-time data processing, resulting in an enhanced user experience. Additionally, I gained a comprehensive understanding of the SimpliCloud platform and its dashboard, a cloud service offered by Global NTT DATA.
 
 ## Completed Tasks
 
@@ -66,10 +66,11 @@ Potential improvements and extensions for the tasks completed include:
 - **Enhanced Backup Solutions**: Implement version control within MongoDB backups for easier point-in-time recovery.
 - **Advanced Voice Recognition Features**: Integrate language options and natural language processing for enhanced accuracy and usability in the voice recognition module.
 
-## Intern
+## Internship Mentor
 
 - **Mustafa** - Intern Developer and Contributor
 
 ---
 
-This README provides an overview of the tasks and technologies used during my internship at NTT Data, detailing project functionalities and my contributions toward creating automated, user-friendly solutions.
+This README provides an overview of the tasks and technologies used during my internship at NTT Data, detailing project functionalities and my contributions toward creating automated, user-friendly solutions, along with my acquired knowledge of the SimpliCloud platform.
+
